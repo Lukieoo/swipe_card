@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Gwent',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -40,16 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Color> _colors = [Color(0xFFFC9E18), Color(0xFFB7742D)];
+    List<Color> _colors = [Color(0xFF000000), Color(0xFF000000)];
     List<double> _stops = [0.0, 1.2];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("data"),
+        backgroundColor: Color(0xFF000000),
+        title: Text("Swipe Card", textAlign: TextAlign.center,),
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(20.0),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -90,7 +92,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10)),
-                      child: Container(width: double.infinity,color: Colors.red,)),
+                      child: Container(width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border( top:BorderSide(color: Color(0xFF000000),width: 1)),
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/background.jpg'),
+                            alignment: Alignment(0, -1.0),
+
+                              colorFilter: ColorFilter.mode(Color(0xffDAD3C7), BlendMode.colorBurn),
+                            fit: BoxFit.fitWidth
+                        )
+                      ),
+                  child: Text("Cirilla Fiona Elen Riannon", textAlign:TextAlign.center,style: TextStyle(
+                    fontFamily: "Gwent"
+                  ),),
+
+                      )),
                 )
               ],
             ),
