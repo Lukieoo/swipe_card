@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  dotted_border: ^1.0.5
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
@@ -49,6 +49,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
     - assets/images/image1.jpg
     - assets/images/background.jpg
+    - assets/images/melee.png
+    - assets/images/token.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -61,11 +63,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
     - family: Gwent
       fonts:
-         - asset: fonts/gwent.ttf
-           style: normal
+        - asset: assets/fonts/hinted-GWENT-ExtraBold.ttf
+          weight: 700
+#  fonts:
+#    - family: Gwent
+#      fonts:
+#         - asset: assets/fonts/hinted-GWENT-ExtraBold.ttf
+#           style: bold
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

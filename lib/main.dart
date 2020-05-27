@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: 'Gwent',
+       // fontFamily: 'Gwent',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -77,13 +78,51 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
-                      child: Image.asset(
-                        "assets/images/image1.jpg",
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height*0.60,
-                        fit: BoxFit.cover,
-                        alignment: Alignment(-3.0,-1.0),
+                      child: Stack(
+                        children: <Widget>[
+                          Image.asset(
+                            "assets/images/image1.jpg",
+                            width: double.infinity,
+                            height: MediaQuery.of(context).size.height*0.60+2,
+                            fit: BoxFit.cover,
+                            alignment: Alignment(-3.0,-1.0),
+                          ),
+                          Positioned(
+                            left: 10,
+                            top: MediaQuery.of(context).size.height*0.2,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: RadialGradient(
+                                      colors: [
+                                        Color(0xffF6BC21),
+                                        Color(0xffF17915),
+
+                                      ],
+                                      stops: [
+                                        0.2,
+                                        1.2
+                                      ],
+                                  ),
+                                //border: Border.all(color: Color(0xFF000000),width: 2,style:  BorderStyle.none),
+
+                              ),child: DottedBorder(
+
+                              borderType: BorderType.Circle,
+                              color: Color(0xffC88E66),
+                              strokeWidth: 1,
+
+                                child: CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.transparent,
+                                  child: Image.asset("assets/images/melee.png",height: 35,),
+                            ),
+                              ),
+                            ),
+                          )
+                        ],
                       )),
+
                 ),
                 Flexible(
                   fit: FlexFit.tight,
@@ -94,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           bottomRight: Radius.circular(10)),
                       child: Container(width: double.infinity,
                       decoration: BoxDecoration(
-                          border: Border( top:BorderSide(color: Color(0xFF000000),width: 1)),
+                          //border: Border( top:BorderSide(color: Color(0xFF000000),width: 1)),
                         image: DecorationImage(
                             image: AssetImage('assets/images/background.jpg'),
                             alignment: Alignment(0, -1.0),
@@ -103,9 +142,34 @@ class _MyHomePageState extends State<MyHomePage> {
                             fit: BoxFit.fitWidth
                         )
                       ),
-                  child: Text("Cirilla Fiona Elen Riannon", textAlign:TextAlign.center,style: TextStyle(
-                    fontFamily: "Gwent"
-                  ),),
+                  child: Column(
+                    children: <Widget>[
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top:20.0),
+                          child: Text("Cirilla Fiona Elen Riannon", textAlign:TextAlign.center,style: TextStyle(
+                            fontFamily: "Gwent",
+                            fontSize: 20.0,
+                            color: Color(0xff4E493E)
+                          ),)
+                          ,
+                        ),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top:12.0),
+                          child: Text("\"Know when fairy tales cease to be tales? When people start believing in them.\"", textAlign:TextAlign.center,style: TextStyle(
+                            //  fontFamily: "Gwent",
+                              fontSize: 15.0,
+                              color: Color(0xff4E493E)
+                          ),)
+                          ,
+                        ),
+                      ),
+                    ],
+                  ),
 
                       )),
                 )
