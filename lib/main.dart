@@ -166,32 +166,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
-//class DraggableCard extends StatelessWidget{
-//  final String name;
-//  final String description;
-//  final String power;
-//  final String image_asset;
-//
-//  DraggableCard({this.name, this.description, this.power, this.image_asset});
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    // TODO: implement createElement
-//    return Positioned(
-//      child: Draggable(
-//          onDragCompleted: (){
-//
-//      },
-//      childWhenDragging: Container(),
-//         // feedback: Container(color: Colors.red,height: 200,width: 200,),
-//
-//      feedback:Container(child: GwentCard(name: name,description: description,power: power,image_asset: image_asset,)),
-//          child: GwentCard(name: name,description: description,power: power,image_asset: image_asset,)),
-//    );
-//
-//  }
-//
-//}
 class GwentCard extends StatelessWidget {
   final String name;
   final String description;
@@ -214,18 +188,6 @@ class GwentCard extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               child: Container(
                 color: Colors.black,
-//                decoration: BoxDecoration(
-//                  gradient: LinearGradient(
-//                    colors: _colors,
-//                    stops: _stops,
-//                  ),
-////          color:  Color(0xFFFC9E18),
-//                  borderRadius: BorderRadius.all(Radius.circular(10)),
-//                  //  border: Border.all(color: Color(0xFFFC9E18),width: 10),
-//                  boxShadow: [
-//                    BoxShadow(color: Colors.grey, blurRadius: 5.0),
-//                  ],
-//                ) ,
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Column(
